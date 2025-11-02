@@ -26,138 +26,81 @@
 
 		<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 		<script>
-			const contractAddress = "0xd108bb3422636b515c33FB6996F015D628CDEe9F";
+			const contractAddress = "610c50c7099f061f8a9da88e87ef844fe6d16e600cb5c4ef8eec28b74b411ea9";
 			const contractABI = [
+		{
+			"inputs": [],
+			"stateMutability": "nonpayable",
+			"type": "constructor"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
 				{
-					inputs: [],
-					stateMutability: "nonpayable",
-					type: "constructor",
+					"indexed": true,
+					"internalType": "address",
+					"name": "from",
+					"type": "address"
 				},
 				{
-					anonymous: false,
-					inputs: [
-						{
-							indexed: true,
-							internalType: "address",
-							name: "from",
-							type: "address",
-						},
-						{
-							indexed: false,
-							internalType: "string",
-							name: "message",
-							type: "string",
-						},
-						{
-							indexed: false,
-							internalType: "uint256",
-							name: "timestamp",
-							type: "uint256",
-						},
-					],
-					name: "NewWave",
-					type: "event",
+					"indexed": false,
+					"internalType": "string",
+					"name": "message",
+					"type": "string"
 				},
 				{
-					inputs: [],
-					name: "getAllWaves",
-					outputs: [
-						{
-							components: [
-								{
-									internalType: "address",
-									name: "waver",
-									type: "address",
-								},
-								{
-									internalType: "string",
-									name: "message",
-									type: "string",
-								},
-								{
-									internalType: "uint256",
-									name: "timestamp",
-									type: "uint256",
-								},
-							],
-							internalType: "struct WavePortal.Wave[]",
-							name: "",
-							type: "tuple[]",
-						},
-					],
-					stateMutability: "view",
-					type: "function",
-				},
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "timestamp",
+					"type": "uint256"
+				}
+			],
+			"name": "NewWave",
+			"type": "event"
+		},
+		{
+			"inputs": [],
+			"name": "getAllWaves",
+			"outputs": [
 				{
-					inputs: [],
-					name: "getTotalWaves",
-					outputs: [
+					"components": [
 						{
-							internalType: "uint256",
-							name: "",
-							type: "uint256",
+							"internalType": "address",
+							"name": "waver",
+							"type": "address"
 						},
+						{
+							"internalType": "string",
+							"name": "message",
+							"type": "string"
+						},
+						{
+							"internalType": "uint256",
+							"name": "timestamp",
+							"type": "uint256"
+						}
 					],
-					stateMutability: "view",
-					type: "function",
-				},
+					"internalType": "struct WavePortal.Wave[]",
+					"name": "",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getTotalWaves",
+			"outputs": [
 				{
-					inputs: [],
-					name: "totalWaves",
-					outputs: [
-						{
-							internalType: "uint256",
-							name: "",
-							type: "uint256",
-						},
-					],
-					stateMutability: "view",
-					type: "function",
-				},
-				{
-					inputs: [
-						{
-							internalType: "string",
-							name: "_message",
-							type: "string",
-						},
-					],
-					name: "wave",
-					outputs: [],
-					stateMutability: "nonpayable",
-					type: "function",
-				},
-				{
-					inputs: [
-						{
-							internalType: "uint256",
-							name: "",
-							type: "uint256",
-						},
-					],
-					name: "waves",
-					outputs: [
-						{
-							internalType: "address",
-							name: "waver",
-							type: "address",
-						},
-						{
-							internalType: "string",
-							name: "message",
-							type: "string",
-						},
-						{
-							internalType: "uint256",
-							name: "timestamp",
-							type: "uint256",
-						},
-					],
-					stateMutability: "view",
-					type: "function",
-				},
-			];
-
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		};
 			const connectBtn = document.getElementById("connectBtn");
 			const accountSpan = document.getElementById("account");
 			const waveBtn = document.getElementById("waveBtn");
